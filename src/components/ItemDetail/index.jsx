@@ -19,7 +19,7 @@ function ItemDetail(){
 
     function onAddToCart(count) {
         alert(`Agregaste ${count} items al carrito`);
-        addItem(user, count);
+        addItem(product, count);
       }
 
     function successAddItemAlert() {

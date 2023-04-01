@@ -1,0 +1,14 @@
+.titleCartView{
+    text-align: center;
+    margin-top: 10%;
+    padding: 5%;
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.subtitle{
+    text-align: center;
+    font-family: Verdana, sans-serif;
+}
+
+a{
+    color: blueviolet;
+}

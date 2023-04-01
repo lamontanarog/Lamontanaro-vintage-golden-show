@@ -51,7 +51,7 @@ export const CustomProvider = ({children}) => {
 	};
 
 	const setProductsInContext = (products) => { 
-		console.log("agragando produtos a ctx")
+		console.log("agregando produtos a ctx")
 		setProducts(products)
 	};
 

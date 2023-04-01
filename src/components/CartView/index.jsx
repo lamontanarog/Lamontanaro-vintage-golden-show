@@ -5,17 +5,20 @@ import {collection, addDoc, serverTimestamp, doc, updateDoc} from "firebase/fire
 import { Context} from "../../Context/CustomContext"
 import {Table, Button} from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
+import "./style.css"
 
 export const Cart = ({estilo, color}) => {
-    const {cart,deleteItem} = useContext(Context);
+    const {cart,deleteItem,clear, qty, total} = useContext(Context);
 
     return (
         <>
         
         {cart.length === 0 ? (
             <>
-            <h1 className={estilo ? "red" : "green"}>No agregaste productos aun, mira nuestros productos <Link to="/">aqui</Link></h1>
-            <h2 className={`tamanio ${color} || ''}`}>Gracias por tu visita</h2>
+            <div>
+            <h1 className="titleCartView">No agregaste productos aun, mira nuestros productos <Link to="/">aqui</Link></h1>
+            <h2 className={"subtitle"}>Gracias por tu visita</h2>
+            </div>
             </>
         ) :  
                 <Table striped bordered hover size="sm">
@@ -24,7 +27,9 @@ export const Cart = ({estilo, color}) => {
                         <th>#</th>
                         <th>Nombre del producto</th>
                         <th>Precio</th>
-                        <th>Accion</th>
+                        <th>unidades</th>
+                        <th>total</th>
+                        <th><Button variant="blue" onClick={() => clear()}> limpiar </Button></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,16 +38,18 @@ export const Cart = ({estilo, color}) => {
                                 <td>{producto.id}</td>
                                 <td>{producto.title}</td>
                                 <td>{producto.price}</td>
+                                <td>{qty}</td>
+                                <td>{total}</td>
                                 <td> 
                                     <Button variant="danger" onClick={() => deleteItem(producto.id)}>
                                         <Icon.Trash />
                                     </Button>
-
                                 </td>
                             </tr>
                             )
                         }
                     </tbody>
+                    
                 </Table>
             
                 
