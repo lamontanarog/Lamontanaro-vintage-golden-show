@@ -1,3 +1,4 @@
+
 import { React, useEffect, useState, useContext, } from "react";
 import {Card, Alert, Button, Container, Row, Col} from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
@@ -5,27 +6,23 @@ import { Context} from "../../../src/Context/CustomContext";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import "./style.css";
+
 function ItemDetail(){
-    const {products, addItem, IsInCart} = useContext(Context);
+    const {products, addItem, IsInCart,qty, item, cantidad} = useContext(Context);
     const {id} = useParams();
     const [product, setProduct] = useState({});
     const MySwal = withReactContent(Swal);
 
 
     const handleClick = () =>{
-        addItem(product,1);
+        addItem(product,cantidad);
         successAddItemAlert();
     } ;
-
-    function onAddToCart(count) {
-        alert(`Agregaste ${count} items al carrito`);
-        addItem(product, count);
-      }
 
     function successAddItemAlert() {
         MySwal.fire({
         title: <strong>Listo!</strong>,
-        html: <i>Agregado correctamente</i>,
+        html: <i> lo agregaste correctamente</i>,
         icon: 'success'
         })
     }
@@ -65,7 +62,6 @@ function ItemDetail(){
             </Row>
             </div>
         </Container>
-       
     )
 }
 

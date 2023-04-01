@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createOrder } from "../../services/firestore";
+import { createOrder } from "../../service/firestore";
 import { useNavigate } from "react-router-dom";
 import CheckoutForm from "./CheckoutForm";
 

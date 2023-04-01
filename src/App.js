@@ -20,7 +20,10 @@ function App() {
         <Route path="/categoria/:id" element={<ListContainer title={"Vintage Golden Shop"} />} />
         <Route path="/products/:id" element={<ItemDetail />} />
         <Route path="/cart" element={<Cart estilo="red" color="red"/>} />
-
+        <Route
+              path="/checkout/:id"
+              element={<h3>Gracias por tu compra</h3>}
+            />
       </Routes>
     </BrowserRouter>
   );

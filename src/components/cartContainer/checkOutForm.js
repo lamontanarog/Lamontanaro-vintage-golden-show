@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 
 export default function CheckoutForm(props) {
-  const [productData, setProductData] = useState({
+  const [userData, setUserData] = useState({
     name: "",
     email: "",
     phone: "",
   });
 
-  console.log(productData);
+  console.log(userData);
 
   function handleChange(evt) {
     const value = evt.target.value;
     const input = evt.target.name;
 
-    const newProductData = { ...productData };
-    newProductData[input] = value;
-    setProductData(newProductData);
+    const newUserData = { ...userData };
+    newUserData[input] = value;
+    setUserData(newUserData);
   }
 
   function clearForm() {
-    setProductData({
+    setUserData({
       name: "",
       email: "",
       phone: "",
@@ -27,7 +27,7 @@ export default function CheckoutForm(props) {
   }
 
   function submitData(){
-    props.onSubmit(productData)
+    props.onSubmit(userData)
   }
 
   return (
@@ -36,7 +36,7 @@ export default function CheckoutForm(props) {
       <div style={{ display: "flex", marginBottom: 8 }}>
         <label style={{ width: "100px", marginRight: 4 }}>Nombre</label>
         <input
-          value={ProductData.name}
+          value={userData.name}
           name="name"
           type="text"
           required
@@ -47,7 +47,7 @@ export default function CheckoutForm(props) {
       <div style={{ display: "flex", marginBottom: 8 }}>
         <label style={{ width: "100px", marginRight: 4 }}>Email</label>
         <input
-          value={ProductData.email}
+          value={userData.email}
           name="email"
           type="email"
           required
@@ -58,7 +58,7 @@ export default function CheckoutForm(props) {
       <div style={{ display: "flex", marginBottom: 8 }}>
         <label style={{ width: "100px", marginRight: 4 }}>Phone</label>
         <input
-          value={productData.phone}
+          value={userData.phone}
           name="phone"
           type="text"
           required
@@ -68,9 +68,9 @@ export default function CheckoutForm(props) {
       <button
         disabled={
           !(
-            productData.name !== "" &&
-            productData.phone !== "" &&
-            productData.email !== ""
+            userData.name !== "" &&
+            userData.phone !== "" &&
+            userData.email !== ""
           )
         }
         onClick={submitData}

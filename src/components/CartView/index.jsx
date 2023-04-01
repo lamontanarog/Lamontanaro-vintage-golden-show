@@ -1,15 +1,16 @@
 import React, {useContext} from "react";
 import { Link } from "react-router-dom";
-import {db} from "../../firebase/firebase"
-import {collection, addDoc, serverTimestamp, doc, updateDoc} from "firebase/firestore"
 import { Context} from "../../Context/CustomContext"
 import {Table, Button} from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
 import "./style.css"
 
-export const Cart = ({estilo, color}) => {
-    const {cart,deleteItem,clear, qty, total} = useContext(Context);
+export const Cart = () => {
+    const {cart, setCart, deleteItem, total} = useContext(Context);
 
+    const clearCart = () => {
+        setCart([]);
+    }
     return (
         <>
         
@@ -27,28 +28,35 @@ export const Cart = ({estilo, color}) => {
                         <th>#</th>
                         <th>Nombre del producto</th>
                         <th>Precio</th>
-                        <th>unidades</th>
+                        <th>cantidad</th>
                         <th>total</th>
-                        <th><Button variant="blue" onClick={() => clear()}> limpiar </Button></th>
+                        <th>remover</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {cart.map( (producto) =>
+                        {cart.map( (producto) =>  
                             <tr>
-                                <td>{producto.id}</td>
+                                <td key={producto.id}></td>
                                 <td>{producto.title}</td>
                                 <td>{producto.price}</td>
-                                <td>{qty}</td>
-                                <td>{total}</td>
+                                <td>{1}</td>
+                                <td>{ producto.price}</td>
                                 <td> 
                                     <Button variant="danger" onClick={() => deleteItem(producto.id)}>
                                         <Icon.Trash />
                                     </Button>
                                 </td>
+                                
                             </tr>
+                            
                             )
-                        }
-                    </tbody>
+                         } 
+                         
+                         </tbody>
+                        
+
+<Link to={"/checkout"}>Finalizar compra</Link>
+                        
                     
                 </Table>
             

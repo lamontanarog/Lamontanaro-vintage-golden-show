@@ -15,9 +15,6 @@ function ItemDetailContainer({product}){
         <Card.Img variant="top" src={product.image} />
         <Card.Body>
           <Card.Title>{product.title}</Card.Title>
-          <Card.Text>
-            {product.description}
-          </Card.Text>
           <Link to={`/products/${product.id}`}>
             <Button variant="outline-primary" >Ver mas</Button>
           </Link>
