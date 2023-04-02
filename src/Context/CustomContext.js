@@ -14,8 +14,8 @@ export const CustomProvider = ({children}) => {
 	const [total, setTotal] = useState(0);
 
 	useEffect(()=>{
-			setQty(cart.reduce((total,item) => total + item.cantidad, 0))
-			setTotal(cart.reduce((total, item) => total +(item.cantidad * item.price),0))
+			setQty(JSON.stringify(cart.reduce((total,item) => total + item.cantidad, 0)))
+			
 	},[])
 
 	const addItem = (item, cantidad) =>{
@@ -49,9 +49,15 @@ export const CustomProvider = ({children}) => {
 			setQty(0);
 			setTotal(0);
 	};
+	
+
+	function getTotalCarrito(){
+		const valueInCart = JSON.stringify(cart.slice(4,6))
+		console.log(valueInCart)
+		return(valueInCart) 
+	}
 
 	const setProductsInContext = (products) => { 
-		console.log("agregando produtos a ctx")
 		setProducts(products)
 	};
 

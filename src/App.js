@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetail from './components/ItemDetail';
 import {CustomProvider} from "../src/Context/CustomContext"
 import {Cart} from "./components/CartView"
+import CheckoutCart from './components/cartContainer/checkOut';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         <Route path="/cart" element={<Cart estilo="red" color="red"/>} />
         <Route
               path="/checkout/:id"
-              element={<h3>Gracias por tu compra</h3>}
+              element={<CheckoutCart/>}
             />
       </Routes>
     </BrowserRouter>

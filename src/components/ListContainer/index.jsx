@@ -30,8 +30,7 @@ function ListContainer({title}){
         .then ((result) =>{  
             const products = result.docs.map((doc) => ({...doc.data(), id:doc.id }));
             setProducts(products); 
-            setProductsInContext(products)               
-            console.log(products, products);
+            setProductsInContext(products)        
         })
         .finally(setLoading(false));
     }, [id]);

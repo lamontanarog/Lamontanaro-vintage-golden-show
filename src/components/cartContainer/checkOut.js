@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import { createOrder } from "../../service/firestore";
+import { createOrder } from "../service/firestore";
 import { useNavigate } from "react-router-dom";
-import CheckoutForm from "./CheckoutForm";
+import CheckoutForm from "./CheckOutForm";
 
-function CheckoutCart({ cart, total }) {
+function CheckoutCart({ cart}) {
   const navigateTo = useNavigate();
 
   async function handleCheckout(userData) {
     const orderData = {
       buyer: userData,
       items: cart,
-      total: total,
       timestamp: new Date(),
     };
     const id = await createOrder(orderData);
