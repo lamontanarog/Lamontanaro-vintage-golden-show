@@ -1,8 +1,9 @@
 <h1>Profesor: Santiago Salkin. </h1>
 <h1>Alumno: Lamontanaro Giuliana.</h1>
-<title>Descripcion :
+<h2>Descripcion :
 En el curso de React de la plataforma Coderhouse, nos fue propuesto un proyecto de un ecommerse a elección. En este caso mi elección esta orientada a una tienda de ropa realizada con una fake api.
-</title>
+</h2>
+<h3>
 Creación del proyecto:
 El proyecto fue dividido en dos pre-entregas, y una tercera entrega, que es el proyecto terminado;
 
@@ -31,6 +32,8 @@ Componentes:
 3.     Detalle de producto
 4.     CartContext
 5.     CartWidget
+
+</h3>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
