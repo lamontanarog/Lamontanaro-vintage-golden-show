@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import { useContext } from 'react';
 import NavBar from './NavBar';
 import ListContainer from './components/ListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

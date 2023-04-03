@@ -36,7 +36,7 @@ export const CustomProvider = ({children}) => {
 
 	const deleteItem = (id) => {
 			const found = cart.find(producto => producto.id === id);
-			setCart(cart.filter((item) => item.id !=id));
+			setCart(cart.filter((item) => item.id !== id));
 			setQty( qty - found.cantidad)
 			setTotal(total - (found.price * found.cantidad))
 	};
@@ -49,13 +49,6 @@ export const CustomProvider = ({children}) => {
 			setTotal(0);
 	};
 	
-
-	function getTotalCarrito(){
-		const valueInCart = JSON.stringify(cart.slice(4,6))
-		console.log(valueInCart)
-		return(valueInCart) 
-	}
-
 	const setProductsInContext = (products) => { 
 		setProducts(products)
 	};

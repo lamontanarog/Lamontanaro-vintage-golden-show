@@ -1,6 +1,6 @@
 
 import { React, useEffect, useState, useContext, } from "react";
-import {Card, Alert, Button, Container, Row, Col} from 'react-bootstrap';
+import {Card, Button, Container, Row, Col} from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import { Context} from "../../../src/Context/CustomContext";
 import Swal from 'sweetalert2';
@@ -8,7 +8,7 @@ import withReactContent from 'sweetalert2-react-content';
 import "./style.css";
 
 function ItemDetail(){
-    const {products, addItem, IsInCart,qty, item} = useContext(Context);
+    const {products, addItem} = useContext(Context);
     const {id} = useParams();
     const [product, setProduct] = useState({});
     const MySwal = withReactContent(Swal);
@@ -29,7 +29,7 @@ function ItemDetail(){
     }
     
     useEffect(() =>{
-        let p = products.find( prod => prod.id == id)
+        let p = products.find( prod => prod.id === id)
         setProduct(p) 
   
     }, [id]);
