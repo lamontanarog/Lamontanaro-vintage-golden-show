@@ -41,7 +41,7 @@ function ItemDetail(){
         <div className="Father">
             <Row className="justify-content-lg-center">
                 <Col lg="auto">
-                    <Card key={product.id} style={{ width: '30rem' }}>
+                    <Card key={product.id} style={{ width: '30rem', margin:'4rem'}}>
                         <Card.Body>
                             <Card.Title>{product.title}</Card.Title>
                         </Card.Body>

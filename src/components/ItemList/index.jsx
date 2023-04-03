@@ -7,7 +7,7 @@ import './style.css'
 function ItemList({products}){
     return (
         <CardGroup>
-            <Row md={3} className="g-6" >
+            <Row md={3} xl={4} className="g-5" >
                 { products.map((product) =>(<ItemDetailContainer product={product} />)) }
             </Row>
         </CardGroup>
