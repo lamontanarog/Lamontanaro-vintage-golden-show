@@ -52,6 +52,7 @@ export const Cart = () => {
                         ))}
                     </tbody>
                 </Table>
+                <h3 className="Total-Carrito">El total de tu compra es de ${total}</h3>
                 <CheckoutCart cartTotal={total} cart={cart} />
                 </>
             )
