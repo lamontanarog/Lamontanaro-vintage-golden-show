@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css"
 
-export default function CheckoutForm(props) {
+export default function CheckOutForm(props) {
   const [userData, setUserData] = useState({
     name: "",
     email: "",

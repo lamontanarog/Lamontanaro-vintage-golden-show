@@ -1,7 +1,7 @@
 import React from "react";
 import { createOrder, db } from "../service/firestore";
 import { useNavigate } from "react-router-dom";
-import {CheckoutForm} from "./CheckOutForm"
+import CheckOutForm from "./CheckOutForm"
 ;
 
 function CheckoutCart({ cart, cartTotal}) {
@@ -21,7 +21,7 @@ function CheckoutCart({ cart, cartTotal}) {
 
   return (
     <div>
-      <CheckoutForm onSubmit={handleCheckout} />
+      <CheckOutForm onSubmit={handleCheckout} />
     </div>
   );
 }
