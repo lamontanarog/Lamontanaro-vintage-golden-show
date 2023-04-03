@@ -1,5 +1,5 @@
 import React from "react";
-import { createOrder, db } from "../service/firestore";
+import { createOrder } from "../service/firestore";
 import { useNavigate } from "react-router-dom";
 import CheckOutForm from "./CheckOutForm"
 ;
