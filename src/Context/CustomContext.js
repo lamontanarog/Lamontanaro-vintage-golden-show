@@ -14,9 +14,9 @@ export const CustomProvider = ({children}) => {
 	const [total, setTotal] = useState(0);
 
 	useEffect(()=>{
-			setQty(JSON.stringify(cart.reduce((total,item) => total + item.cantidad, 0)))
-			
-	},[])
+		setQty(cart.reduce((total,item) => total + item.cantidad, 0))
+		setTotal(cart.reduce((total, item) => total +(item.cantidad * item.price),0))
+	},[cart])
 
 	const addItem = (item, cantidad) =>{
 			if(IsInCart (item.id)) {
@@ -62,7 +62,7 @@ export const CustomProvider = ({children}) => {
 	};
 
 	return (
-			<Context.Provider value={{ cart,qty, total, products, addItem, deleteItem, clear, IsInCart, setProductsInContext}}>
+			<Context.Provider value={{ cart,setQty, total, products, addItem, deleteItem, clear, IsInCart, setProductsInContext}}>
 					{children}
 			</Context.Provider>
 	);

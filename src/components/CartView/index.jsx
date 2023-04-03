@@ -8,7 +8,7 @@ import CheckoutCart from "../cartContainer/checkOut";
 import { CartTotal } from "../cartContainer/cartTotal";
 
 export const Cart = () => {
-    const { cart, deleteItem, getTotalCarrito } = useContext(Context);
+    const { cart, deleteItem, setQty } = useContext(Context);
 
     return (
         <>
@@ -39,7 +39,7 @@ export const Cart = () => {
                                 <td>{producto.id}</td>
                                 <td>{producto.title}</td>
                                 <td>{producto.price}</td>
-                                <td>{1}</td>
+                                <td>{cart.cantidad}</td>
                                 <td>
                                     <Button
                                         variant="danger"
