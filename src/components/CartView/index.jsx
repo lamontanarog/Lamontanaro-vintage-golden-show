@@ -4,7 +4,7 @@ import { Context } from "../../Context/CustomContext";
 import { Table, Button } from "react-bootstrap";
 import * as Icon from "react-bootstrap-icons";
 import "./style.css";
-import CheckoutCart from "../cartContainer/checkOut";
+import CheckoutCart from "../cartCheckOut/index";
 
 export const Cart = () => {
     const { cart, deleteItem, total} = useContext(Context);

@@ -1,7 +1,7 @@
 import React from "react";
 import { createOrder } from "../service/firestore";
 import { useNavigate } from "react-router-dom";
-import CheckOutForm from "./CheckOutForm"
+import CheckOutForm from "../cartContainer/index"
 ;
 
 function CheckoutCart({ cart, cartTotal}) {
