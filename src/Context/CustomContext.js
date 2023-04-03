@@ -32,7 +32,6 @@ export const CustomProvider = ({children}) => {
 			}
 			setQty(qty + cantidad);
 			setTotal(total + (item.price * cantidad));
-
 	};
 
 	const deleteItem = (id) => {

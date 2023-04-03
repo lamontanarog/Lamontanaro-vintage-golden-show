@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./style.css"
 
 export default function CheckoutForm(props) {
   const [userData, setUserData] = useState({
@@ -31,10 +32,10 @@ export default function CheckoutForm(props) {
   }
 
   return (
-    <div>
-      <h2>Completa tus datos para completar la compra🛍</h2>
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Nombre</label>
+    <div className="father-form-checkoutform">
+      <h2>Rellena tus datos para completar la compra</h2>
+      <div >
+        <label className="label-form">Nombre</label>
         <input
           value={userData.name}
           name="name"
@@ -44,8 +45,8 @@ export default function CheckoutForm(props) {
         />
       </div>
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Email</label>
+      <div >
+        <label className="label-form">Email</label>
         <input
           value={userData.email}
           name="email"
@@ -55,8 +56,8 @@ export default function CheckoutForm(props) {
         />
       </div>
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Phone</label>
+      <div >
+        <label className="label-form">Phone</label>
         <input
           value={userData.phone}
           name="phone"
@@ -65,7 +66,7 @@ export default function CheckoutForm(props) {
           onChange={handleChange}
         />
       </div>
-      <button
+      <button className="button-form"
         disabled={
           !(
             userData.name !== "" &&
@@ -77,7 +78,7 @@ export default function CheckoutForm(props) {
       >
         Crear orden
       </button>
-      <button onClick={clearForm}>limpiar form</button>
+      <button className="button-form" onClick={clearForm}>limpiar form</button>
     </div>
   );
 }

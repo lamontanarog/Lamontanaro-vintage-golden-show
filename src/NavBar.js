@@ -3,7 +3,6 @@ import {LinkContainer} from 'react-router-bootstrap'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './components/CartWidget';
-import { Link, NavLink } from 'react-router-dom';
 import { CustomContext} from "../src/Context/CustomContext"
 
 function NavBar() {

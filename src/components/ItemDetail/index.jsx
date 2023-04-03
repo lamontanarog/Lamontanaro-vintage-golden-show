@@ -8,15 +8,16 @@ import withReactContent from 'sweetalert2-react-content';
 import "./style.css";
 
 function ItemDetail(){
-    const {products, addItem, IsInCart,qty, item, cantidad} = useContext(Context);
+    const {products, addItem, IsInCart,qty, item} = useContext(Context);
     const {id} = useParams();
     const [product, setProduct] = useState({});
     const MySwal = withReactContent(Swal);
 
 
     const handleClick = () =>{
-        addItem(product,cantidad);
+        addItem(product,1);
         successAddItemAlert();
+        // const valorCant = input.value;
     } ;
 
     function successAddItemAlert() {

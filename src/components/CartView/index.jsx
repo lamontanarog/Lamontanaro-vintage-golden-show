@@ -5,10 +5,10 @@ import { Table, Button } from "react-bootstrap";
 import * as Icon from "react-bootstrap-icons";
 import "./style.css";
 import CheckoutCart from "../cartContainer/checkOut";
-import { CartTotal } from "../cartContainer/cartTotal";
 
 export const Cart = () => {
-    const { cart, deleteItem, setQty } = useContext(Context);
+    const { cart, deleteItem, total} = useContext(Context);
+
 
     return (
         <>
@@ -22,7 +22,7 @@ export const Cart = () => {
                         <h2 className={"subtitle"}>Gracias por tu visita</h2>
                     </div>
                 </>
-            ) : (
+            ) : (<>
                 <Table striped bordered hover size="sm">
                     <thead>
                         <tr>
@@ -39,7 +39,7 @@ export const Cart = () => {
                                 <td>{producto.id}</td>
                                 <td>{producto.title}</td>
                                 <td>{producto.price}</td>
-                                <td>{cart.cantidad}</td>
+                                <td>{producto.cantidad}</td>
                                 <td>
                                     <Button
                                         variant="danger"
@@ -52,8 +52,11 @@ export const Cart = () => {
                         ))}
                     </tbody>
                 </Table>
-            )}
-            <CheckoutCart cart={cart} />
+                <CheckoutCart cartTotal={total} cart={cart} />
+                </>
+            )
+            }
+            
         </>
     );
 };
